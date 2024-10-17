@@ -67,11 +67,13 @@ export class ChatsocketGateway implements OnGatewayConnection, OnGatewayDisconne
     
     const countdownInterval = setInterval(() => {
       this.server.emit('countdown', currentCountdown);
+      
       currentCountdown -= 1;
       if (currentCountdown < 0) {
         clearInterval(countdownInterval);
         this.startGame();
       }
+      
     }, 1000);
   }
 

@@ -26,7 +26,7 @@ console.log(process.env.NODE_ENV);
     //   synchronize: true,
     // }),
     TypeOrmModule.forRootAsync({
-      // imports: [ConfigModule],
+      imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => {
         return {
           type: 'sqlite',
